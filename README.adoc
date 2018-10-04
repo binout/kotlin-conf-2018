@@ -15,3 +15,18 @@ Start from the result that you want to enable +
 ... then write the code thant enables it !
 
 `@DslMarker` : prevent scoping mishaps !
+
+=== Advices
+* Dont' pollute the global namespace
+* Unary `+` only if well-scoped
+* Keep lambda files next to your builder classes
+* Don't extend system types (String, Int, ...)
+
+[source, kotlin]
+----
+42 { //bad
+.....
+}
+
+100.dollarsToCent() // Good
+----
