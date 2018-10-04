@@ -299,6 +299,8 @@ TIP: Libraries should specify return types for public API : turn on the IDE insp
 
 https://kotlinconf.com/schedule/#date=4-october&session=44706
 
+https://twitter.com/runchristinarun
+
 👻 Boolean Blindness => work with more expressive types !
 
 * use `sealed` classes (everywhere !)
