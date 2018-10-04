@@ -3,6 +3,7 @@
 == DSL in Kotlin
 
 https://kotlinconf.com/schedule/#session=40652
+
 https://gitlab.com/asarazan/kotlinconf18
 
 [quote]
@@ -32,3 +33,32 @@ Start from the result that you want to enable +
 
 100.dollarsToCent() // Good
 ----
+
+== Kotlin and Spring Boot, a match made in heaven
+
+https://kotlinconf.com/schedule/#session=41106
+
+@nicolas_frankel
+
+🤯 The issue : MAGIC !
+
+🧐 The solution ? : functional configuration
+
+Switch to reactive :
+
+* JPA -> Mongo Reactive
+* WebMVC -> WebFlux
+
+Swith to static configuration (no magic) :
+
+* RestController -> static route definitions -> Router definition DSL
+* @Beans -> Bean Definition DSL
+* `context.initializer.classes` property -> programmtically register BeansInitializer
+
+=== Kofu
+
+https://spring.io/blog/2018/10/02/the-evolution-of-spring-fu
+
+WARNING: Experimental 😜
+
+https://github.com/ajavageek/springfunctional-migration
