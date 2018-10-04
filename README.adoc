@@ -163,3 +163,68 @@ Generate Java Client from `schema.json`
 ====
 
 image::https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png[]
+
+== Architecting a Kotlin JVM and JS multiplatform project
+
+https://kotlinconf.com/schedule/#date=4-october&session=41120
+
+[quote]
+Ideal for businnes logic code sharing
+
+[quote]
+Kotlin Multiplatform != React Native
+
+[quote]
+Kotlin Multiplatform > C / C++
+
+Common 
+
+-> kotlinc (JVM, Android)
+
+-> Kotlin/Native (Executable, Dynamic lib, iOS)
+
+-> kotlin2js (Javascript)
+
+=== Gradle plugins 
+
+* `apply plugin: 'kotlin-platform-common'`
+* `apply plugin: 'kotlin-platform-jvm'`
+* `apply plugin: 'org.jetbrains.kotlin.frontend`
+* ...
+
+=== Concept
+
+.Common
+[source, kotlin]
+----
+expect class Order {
+    val id: Int
+    val userId: Int
+}
+----
+
+.JVM
+[source, kotlin]
+----
+actual data class Order {
+    val id: Int
+    val userId: Int
+}
+----
+
+`expect` is not interface !
+
+* simplier implementation
+* can have a constructor
+* all implementations are known at compile time
+* more flexibility
+* top level and extension functions are supported
+
+[WARNING]
+====
+* Cannot reference any platform specific code
+* Can only have kotlin code
+* Can depend only platform common lib
+====
+
+https://github.com/felipecsl/ktnes
