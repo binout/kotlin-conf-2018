@@ -1,0 +1,17 @@
+= Kotlin Conf
+
+== DSL in Kotlin
+
+https://kotlinconf.com/schedule/#session=40652
+
+[quote]
+When you really wish your language could do the thing
+
+.Ktor
+image::http://ktor.io/what-is-ktor-shadow.png[]
+
+[quote]
+Start from the result that you want to enable +
+... then write the code thant enables it !
+
+`@DslMarker` : prevent scoping mishaps !
