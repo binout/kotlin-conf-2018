@@ -235,6 +235,62 @@ https://kotlinconf.com/schedule/#date=4-october&session=33626
 
 Slides : https://speakerdeck.com/npryce/the-kotlin-type-hierarchy-from-top-to-bottom
 
+👍👍👍👍👍👍
+
 == New Type Inference and Related Language Features
 
 https://kotlinconf.com/schedule/#date=4-october&session=45353
+
+TIP: you need to explicity opt in at the call site to use experimental features : `kotlin { experimental { contracts 'enable'}`
+
+[TIP]
+=====
+you can mark your experimental API with :
+
+[source]
+----
+@Experimental
+annotation class ShinyNewAPI
+
+@ShinyNewAPI
+class Foo
+----
+=====
+
+=== Contracts
+
+[quote]
+We know something about run, which the compiler doesn't
+
+*Contracts allow to share extra information about code semantics with the compiler*
+
+* Making smart casts even smarter
+
+[source]
+----
+fun String?.isNullOrEmpty(): Boolean {
+    contract {
+        returns(false) implies (this@isNullOrEmpty != null)
+    }
+    return this == "" || this == null
+}
+
+val s: String? = ""
+if (!s.isNullOrEmpty) {
+    s.first() // ✅
+}
+----
+
+=== New type inference
+
+* Better and more powerful type inference
+* New Features are supported
+
+`kotlin { experimental { newInference 'enable'}`
+
+TIP: Libraries should specify return types for pulbic API : turn on the IDE inspection ("Public API delcaration has implicit return type")
+
+* _Function Interface_ conversions for Kotlin functions
+* better inference for builders
+* better inference for call chains
+* better inference for intersection types
