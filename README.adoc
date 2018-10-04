@@ -63,7 +63,7 @@ WARNING: Experimental 😜
 
 https://github.com/ajavageek/springfunctional-migration
 
-.kofu
+.kofu (no more annotations !)
 [source, kotlin]
 ----
 val beans = beans {
