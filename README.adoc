@@ -1,4 +1,5 @@
 = Kotlin Conf
+:toc:
 
 == DSL in Kotlin
 
@@ -116,3 +117,49 @@ class PersonRepository(private val mongo: ReactiveMongoOperations) {
     fun insert(persons: List<Person>) = mongo.insert(persons, Person::class)
 }
 ----
+
+== GraphQL powered by Kotlin
+
+https://kotlinconf.com/schedule/#date=4-october&session=22460
+
+=== GraphQL server 
+
+https://github.com/pgutkowski/KGraphQL
+
+.GraphQL Type
+[source]
+----
+type UFOSighting {
+    id : Int!
+    city: String
+}
+----
+
+.KGraphQL
+[source]
+----
+type <UFOSighting>
+
+data class UFOSighting {
+    id : Int = -1
+    city: String?
+}
+----
+
+=== GraphQL client
+
+https://github.com/apollographql/apollo-android
+
+Generate Java Client from `schema.json`
+
+1. Build your request
+2. Enqueue the resquest
+3. Handle the response
+
+[TIP]
+==== 
+* Intellij GraphQL plugin
+* Retrofit GraphQL
+====
+
+image::https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png[]
