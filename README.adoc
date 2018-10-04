@@ -288,9 +288,41 @@ if (!s.isNullOrEmpty) {
 
 `kotlin { experimental { newInference 'enable'}`
 
-TIP: Libraries should specify return types for pulbic API : turn on the IDE inspection ("Public API delcaration has implicit return type")
+TIP: Libraries should specify return types for public API : turn on the IDE inspection ("Public API delcaration has implicit return type")
 
 * _Function Interface_ conversions for Kotlin functions
 * better inference for builders
 * better inference for call chains
 * better inference for intersection types
+
+== Representing State: the Kotlin Edition
+
+https://kotlinconf.com/schedule/#date=4-october&session=44706
+
+👻 Boolean Blindness => work with more expressive types !
+
+* use `sealed` classes (everywhere !)
+* use `interfaces` for boolean representation
+
+💥 Strings are *danger* (same for Int) => infinite input 😱
+
+.Limit state !
+[source, kotlin]
+----
+class IllogicalPerson {
+    var heart: Heart?
+    var head: Head?
+    var arms: List<Arm>
+    var legs: List<Leg>
+}
+
+class LogicalPerson {
+    var heart: Heart
+    val head: Head
+    val arms: Pair<Arm?,Arm?>
+    val legs: Pair<Leg?,Leg?>
+}
+----
+
+😻😻😻😻
+
