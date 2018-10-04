@@ -228,3 +228,13 @@ actual data class Order {
 ====
 
 https://github.com/felipecsl/ktnes
+
+== Exploring the Kotlin type hierarchy from top to bottom
+
+https://kotlinconf.com/schedule/#date=4-october&session=33626
+
+Slides : https://speakerdeck.com/npryce/the-kotlin-type-hierarchy-from-top-to-bottom
+
+== New Type Inference and Related Language Features
+
+https://kotlinconf.com/schedule/#date=4-october&session=45353
