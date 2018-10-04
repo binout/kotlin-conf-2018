@@ -3,20 +3,22 @@
 == DSL in Kotlin
 
 https://kotlinconf.com/schedule/#session=40652
+https://gitlab.com/asarazan/kotlinconf18
 
 [quote]
 When you really wish your language could do the thing
 
-.Ktor
+=== Ktor
+
 image::http://ktor.io/what-is-ktor-shadow.png[]
 
+=== Advices
 [quote]
 Start from the result that you want to enable +
 ... then write the code thant enables it !
 
 `@DslMarker` : prevent scoping mishaps !
 
-=== Advices
 * Dont' pollute the global namespace
 * Unary `+` only if well-scoped
 * Keep lambda files next to your builder classes
