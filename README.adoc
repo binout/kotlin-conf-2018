@@ -343,3 +343,41 @@ Structure of [functional] sequential code is the same as parallel code
 Structure of [imperative] synchronous code is the same as asynchronous code
 
 🤩😎🤩😎🤩😎🤩😎🤩😎🤩😎
+
+== Functional Programming in Kotlin with Λrrow
+
+https://kotlinconf.com/schedule/#date=4-october&session=21819
+
+image:https://arrow-kt.io/img/arrow-brand-sidebar.svg[float=left]
+
+https://arrow-kt.io/
+
+=== Immutable model 
+
+* with data class for simple case
+* Arrow provides `optics` with `lens` (https://arrow-kt.io/docs/optics/dsl/#optics-dsl)
+
+=== Pure
+
+* Don't throw exceptions -> use `Either` and `Try` but it's *synchronous*
+* Arrow provides _Monad Transformers_ : `EitherT`
+
+=== Async non-blocking
+
+* Higher kinded types : abstract away the computational container type
+** `class Option<A> : OptionOf<A>
+** https://arrow-kt.io/docs/typeclasses/monad/#kindf-aflatmap` 
+
+=== KEEP-87
+
+MR to add Type Class in Kotlin :
+https://github.com/Kotlin/KEEP/pull/87
+
+.Type class declaration
+[source]
+----
+interface Repository<A> {
+    fun A.save(): A
+    fun cache(): List<A>
+}
+----
