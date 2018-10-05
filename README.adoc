@@ -381,3 +381,30 @@ interface Repository<A> {
     fun cache(): List<A>
 }
 ----
+
+== Building Server Backends with Ktor
+
+https://kotlinconf.com/schedule/#date=4-october&session=41725
+
+https://ktor.io/
+
+[quote]
+Composable, DSL based web services in Kotlin
+
+WARNING: 1.0 waiting for Kotlin 1.3 (corountine no more experimental)
+
+.ktor
+[source, kotlin]
+----
+fun Application.verify() {
+    install(StatusPages) {...}
+    install(ContentNegociation) {...}
+    routing {
+        post("/verify") {
+            call.respond(Response(status="OK")
+        }
+    }
+}
+
+data class Response(val status: String)
+----
