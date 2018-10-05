@@ -328,3 +328,18 @@ class LogicalPerson {
 
 😻😻😻😻
 
+== Exploring Coroutines in Kotlin
+
+https://kotlinconf.com/schedule/#date=4-october&session=41601
+
+Code : https://agiledeveloper.com/presentations/exploring_coroutines_in_kotlin.zip
+
+.Parallel Stream
+[quote]
+Structure of [functional] sequential code is the same as parallel code
+
+.Coroutine
+[quote]
+Structure of [imperative] synchronous code is the same as asynchronous code
+
+🤩😎🤩😎🤩😎🤩😎🤩😎🤩😎
