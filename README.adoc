@@ -408,3 +408,60 @@ fun Application.verify() {
 
 data class Response(val status: String)
 ----
+
+== Best Practices for Unit Testing in Kotlin
+
+https://kotlinconf.com/schedule/#date=4-october&session=41109
+
+=== Junit 5
+
+* Reuse the Test Class Instance :
+`@TestInstance(TestInstance.Lifecycle.PER_CLASS)` +
+-> you can use `private val` field or `init {...}` block
+
+TIP : you can set the lifecycle by defaut in `junit-platform.properties file` (no more need annotation)
+
+* Use backticks for test name
+
+* Use `@Nested` to group tests (by tested method of class for instance)
+
+=== Kotlin Test Libraries
+
+image::images/test.JPG[]
+
+TIP : write test specific extension for AssertJ
+
+=== Mocking
+
+WARNING: ☠️ Classes Are Final by Default 
+
+=> use `MockK` (https://mockk.io/)
+
+* Don't recreate Mocks ! (it's expensive : 2,1s -> 0,4s )
+
+[source]
+----
+@BeforeEach
+fun init() {
+    clearMocks(repo, client)
+}
+----
+
+=== Spring Integration
+
+* Use maven plugin `allopen` to deal with final classes (✅)
+* Use constructor injection (👍)
+
+=== Data class
+
+* Use for Assertions !
+
+TIP: `assertThat(...).isEqualToIgnoringGivendFields(..., "id")`
+
+* Helper function for Object Creation (use default values for data class args)
+
+* Data classes for Parameterized Test with `@MethodSource` 
+
+=== Summary
+
+image::images/test-summary.JPG[]
