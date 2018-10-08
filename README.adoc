@@ -465,3 +465,8 @@ TIP: `assertThat(...).isEqualToIgnoringGivendFields(..., "id")`
 === Summary
 
 image::images/test-summary.JPG[]
+
+== Creating Internal DSLs in Kotlin
+
+https://kotlinconf.com/schedule/#date=4-october&session=41599
+
